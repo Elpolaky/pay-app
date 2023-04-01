@@ -29,7 +29,7 @@ EN_cardError_t getCardHolderName(ST_cardData_t*cardData)
 
 EN_cardError_t getCardExpiryDate(ST_cardData_t*cardData)
 {
-        printf("please Enter Expiration date: \n \n ");
+    printf("please Enter Expiration date MM/YY : \n \n ");
 
     int  month, year;
 	scanf("%s", cardData->cardExpirationDate);

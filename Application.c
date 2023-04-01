@@ -17,7 +17,8 @@ void appStart()
         while(status==WRONG_NAME)
         {
             status=getCardHolderName(&card_data);
-            printf("INVALID NAME \n");
+            system("cls");
+            printf("INVALID NAME! \n");
         }
         if(status==CARD_OK)
         {
@@ -31,7 +32,8 @@ void appStart()
             status=getCardExpiryDate(&card_data);
             if (status == WRONG_EXP_DATE)
             {
-                printf("\nWRONG EXPIRY DATE FORMAT!\nPLEASE ENTER THE EXPIRY DATE MM/YY : \n \n ");
+                system("cls");
+                printf("\nWRONG EXPIRY DATE FORMAT!\n ");
 
             }
 
@@ -46,6 +48,12 @@ void appStart()
         while(status==WRONG_PAN)
         {
             status=getCardPAN(&card_data);
+			if (status == WRONG_PAN)
+            {
+                system("cls");
+                printf("\nWRONG CARD PAN!\n");
+
+            }
 
         }
         if(status==CARD_OK)
@@ -57,11 +65,12 @@ void appStart()
         status=WRONG_DATE;
         while(status==WRONG_DATE)
         {
-            printf("Please enter transaction date: \n \n ");
+            printf("Please enter transaction date DD/MM/YYYY : \n \n ");
             status=getTransactionDate(&terminal_data);
              if (status == WRONG_DATE)
             {
-                printf("\nWRONG TRANSACTION DATE FORMAT!\nPLEASE ENTER THE TRANSACTION DATE DD/MM/YY : \n \n ");
+                system("cls");
+                printf("\nWRONG TRANSACTION DATE FORMAT!\n ");
 
             }
 
@@ -76,8 +85,10 @@ void appStart()
         status=isCardExpired(&card_data,&terminal_data);
         if(status==EXPIRED_CARD)
         {
-            printf("DECLIEND\n");
-            printf("EXPIRED CARD\n");
+            system("cls");
+            printf("DECLIEND!\n");
+            printf("EXPIRED CARD!\n");
+            anotherprocess=0;
             break;
         }
         else
@@ -92,7 +103,8 @@ void appStart()
             status=getTransactionAmount(&terminal_data);
               if (status == INVALID_AMOUNT)
             {
-                printf("PLEASE ENTER A VALID TRANSACTION AMOUNT : \n \n ");
+                system("cls");
+                printf("PLEASE ENTER A VALID TRANSACTION AMOUNT! : \n \n ");
 
             }
 
@@ -103,8 +115,9 @@ void appStart()
             status=isBelowMaxAmount(&terminal_data);
             if(status==EXCEED_MAX_AMOUNT)
             {
-                printf("DECLIEND..EXCEEDING MAX AMOUNT\n");
-                printf("PLEASE ENTER TRANSACTION AMOUNT : \n \n ");
+                system("cls");
+                printf("DECLIEND..EXCEEDING MAX AMOUNT!\n");
+                printf("Please enter transaction amount : \n \n ");
                 status=getTransactionAmount(&terminal_data);
 
             }
@@ -147,6 +160,7 @@ void appStart()
 
         // Actions to take according to status
         printf("\n");
+
         status=recieveTransactionData(&transaction_data);
         if(status==FRAUD_CARD) printf("Fraud Card process failed");
         else if(status==DECLINED_STOLEN_CARD) printf("Blocked card process failed");
@@ -157,6 +171,8 @@ void appStart()
 
         }
         printf("\n");
+        system("cls");
+        printf("\nplease wait while processing .... \n\n");
         saveTransaction(p_transaction_data);
 
         printf("IF you want to make another process press 1 : ");
