@@ -1,0 +1,186 @@
+Team name:- Hugs for my bugs 
+
+function name:-payment card
+
+/***************************************************/
+test case 1:
+
+name : 
+ kareem magdy mahmoud 
+
+expire date : 
+05/25
+
+PAN : 
+478521456923654972
+
+transaction date : 
+10/10/2020
+
+transaction amount : 
+1000
+
+transaction approved story 
+*input data:-
+a)valid 	
+b)not expired
+c)withdraw an amount below max amount & below|equal balance in my account 
+
+
+*expexted result:- passed operation and list transaction data
+
+*actual result:- passed operation and list transaction data
+
+/****************************************************/
+test case 2:
+
+name :
+ kareem magdy mahmoud 
+
+expire date : 
+05/25
+
+PAN : 
+478521456923654972
+
+transaction date : 
+10/10/2020
+
+transaction amount : 
+200000
+
+exceed max amount  story 
+*input data:-
+a)valid 	
+b)not expired
+c)withdraw an amount above set max amount
+
+
+*expexted result:- declined.. exceeding max amount
+
+*actual result:-declined.. exceeding max amount
+
+/********************************************************************/
+test case 3: insufficient fund story
+
+
+name :
+ Amr Gamal ElDin ElAbd
+
+expire date : 
+05/25
+
+PAN : 
+555555555888888888
+
+transaction date : 
+10/10/2020
+
+transaction amount : 
+10000
+
+
+*input data:-
+a)valid 	
+b)not expired
+c)withdraw an amount below set max amount & exceed balance in my acount
+
+
+*expexted result:- declined.. insufficient fund
+
+*actual result:-declined.. insufficient fund
+
+/********************************************************************/
+
+test case 4: pan number
+
+name :
+ Amr Gamal ElDin ElAbd
+
+
+expire date : 
+05/25
+
+PAN :
+123456789123456789
+
+transaction date :
+10/10/2022
+
+transaction amount : 
+1000
+
+*input data:-
+a)valid 	
+b)not expired
+c)withdraw an amount below set max amount & below balance in my acount
+
+
+*expexted result:- declined.. fraud card
+
+*actual result:-declined.. fraud card
+
+/********************************************************************/
+test case 5:  stolen card story
+
+name :
+ Nada Abdelazim Mohamed
+
+expire date : 
+05/25
+
+PAN :
+197564875213695478
+
+transaction date :
+10/10/2022
+
+transaction amount : 
+1000
+
+
+
+*input data:-
+a)valid 	
+b)not expired
+c)withdraw an amount below set max amount & below balance in my acount
+
+
+*expexted result:- declined.. stolen card
+
+*actual result:-declined.. stolen card
+
+
+/***************************************/
+
+test case 6: expired card story
+
+
+name :
+ Nada Abdelazim Mohamed
+
+expire date : 
+05/25
+
+PAN : 
+478521456923654972
+
+transaction date : 
+10/10/2028
+
+transaction amount : 
+1000
+
+
+*input data:-
+a)valid 	
+b)expired
+c)withdraw an amount below set max amount & below balance in my acount
+
+
+*expexted result:- declined.. expired card
+
+*actual result:-declined.. expired card
+
+
+/***************************************/
