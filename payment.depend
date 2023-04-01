@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1680339418 source:c:\kareem\my data\courses\sprints\payment\payment\card.c
+	"Card.h"
+
+1680322275 c:\kareem\my data\courses\sprints\payment\payment\card.h
+	<stdio.h>
+	<string.h>
+	<conio.h>
+
+1680340341 source:c:\kareem\my data\courses\sprints\payment\payment\application.c
+	"Application.h"
+
+1680332174 c:\kareem\my data\courses\sprints\payment\payment\application.h
+	"Server.h"
+
+1680333281 c:\kareem\my data\courses\sprints\payment\payment\server.h
+	<stdio.h>
+	<stdlib.h>
+	"Terminal.h"
+
+1680332154 c:\kareem\my data\courses\sprints\payment\payment\terminal.h
+	"Card.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdint.h>
+
+1680342142 source:c:\kareem\my data\courses\sprints\payment\payment\server.c
+	"database.h"
+
+1680334274 c:\kareem\my data\courses\sprints\payment\payment\database.h
+	"Server.h"
+
+1680323201 source:c:\kareem\my data\courses\sprints\payment\payment\terminal.c
+	"Terminal.h"
+
