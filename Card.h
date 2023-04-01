@@ -16,6 +16,7 @@ typedef struct ST_cardData_t
     uint8_t cardExpirationDate[6];
 } ST_cardData_t;
 
+extern ST_cardData_t card_data;
 
 typedef enum EN_cardError_t
 {

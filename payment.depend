@@ -1,13 +1,13 @@
 # depslib dependency file v1.0
-1680339418 source:c:\kareem\my data\courses\sprints\payment\payment\card.c
+1680375664 source:c:\kareem\my data\courses\sprints\payment\payment\card.c
 	"Card.h"
 
-1680322275 c:\kareem\my data\courses\sprints\payment\payment\card.h
+1680369483 c:\kareem\my data\courses\sprints\payment\payment\card.h
 	<stdio.h>
 	<string.h>
 	<conio.h>
 
-1680340341 source:c:\kareem\my data\courses\sprints\payment\payment\application.c
+1680375943 source:c:\kareem\my data\courses\sprints\payment\payment\application.c
 	"Application.h"
 
 1680332174 c:\kareem\my data\courses\sprints\payment\payment\application.h
@@ -25,12 +25,15 @@
 	<string.h>
 	<stdint.h>
 
-1680342404 source:c:\kareem\my data\courses\sprints\payment\payment\server.c
+1680374371 source:c:\kareem\my data\courses\sprints\payment\payment\server.c
 	"database.h"
 
-1680334274 c:\kareem\my data\courses\sprints\payment\payment\database.h
+1680374493 c:\kareem\my data\courses\sprints\payment\payment\database.h
 	"Server.h"
 
-1680323201 source:c:\kareem\my data\courses\sprints\payment\payment\terminal.c
+1680372707 source:c:\kareem\my data\courses\sprints\payment\payment\terminal.c
 	"Terminal.h"
+
+1680373239 source:c:\kareem\my data\courses\sprints\payment\payment\main.c
+	"Application.h"
 

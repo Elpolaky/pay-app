@@ -108,6 +108,7 @@ void getTransactionDateTest(void) {
 
 void isCardExpriedTest(void) {
 
+
 	ST_terminalData_t termTest;
 	ST_cardData_t CardTest;
 	EN_terminalError_t state ;

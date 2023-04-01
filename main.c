@@ -1,8 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include"Application.h"
 
-int main()
+void main (void)
 {
-    printf("Hello world!\n");
-    return 0;
+
+    appStart();
+
 }

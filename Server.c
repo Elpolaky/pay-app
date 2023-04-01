@@ -712,24 +712,6 @@ void saveTransactionTesr(void)
 void listSavedTransactions(void)
 {
 
-
-
-    /**{
-           {
-               "kareem magdy", "11111111112222222222","02/24"
-           },
-
-           {
-               2500,1000,"02/23"
-           },
-
-
-           APPROVED,
-
-           5
-       },*/
-
-
     printf("-------------------------------------\n");
     printf("Card Holder Name : ");
 
@@ -740,13 +722,12 @@ void listSavedTransactions(void)
         printf("%c",p_trancNum->cardHolderData.cardHolderName[cardHolderName]) ;
 
     }
-    printf("\t\t");
+    printf("\t ");
 
     printf("PAN: ");
 
-    for(uint8_t C_PrimaryNum = 0 ; C_PrimaryNum <19 ; C_PrimaryNum++)
+    for(uint8_t C_PrimaryNum = 0 ; C_PrimaryNum <18 ; C_PrimaryNum++)
     {
-
         printf("%c", p_trancNum->cardHolderData.primaryAccountNumber[C_PrimaryNum] );
 
     }
@@ -762,13 +743,13 @@ void listSavedTransactions(void)
 
     printf("\n");
     printf("MaxTransAmount : ");
-    printf("%f", p_trancNum->terminalData.maxTransAmount) ;
+    printf("%.2f", p_trancNum->terminalData.maxTransAmount) ;
+
+    printf("\t\t\t ");
+    printf("TransAmount : ");
+    printf("%.2f",p_trancNum->terminalData.transAmount );
 
     printf("\t\t");
-    printf("TransAmount : ");
-    printf("%f",p_trancNum->terminalData.transAmount );
-
-    printf("\t");
     printf("TransactionDate : ");
     for(uint8_t C_transDate=0 ; C_transDate<11 ; C_transDate++)
     {
@@ -783,7 +764,13 @@ void listSavedTransactions(void)
     else if(p_trancNum->transState == FRAUD_CARD) printf("FRAUD_CARD");
     else  printf("INTERNAL_SERVER_ERROR");
 
-    printf("\t\t\t");
+
+    printf("\n");
+    printf("Current balance  : ");
+    if(p_account!=NULL)
+    printf("%.2f",p_account->balance);
+
+    printf("\n");
     printf("Sequence Number : ");
     printf("%d",p_trancNum->transactionSequenceNumber);
 

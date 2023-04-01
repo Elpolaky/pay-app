@@ -5,7 +5,8 @@ EN_cardError_t getCardHolderName(ST_cardData_t*cardData)
 {
     uint8_t size;
 
-    printf("please Enter your name: ");
+    printf("please Enter your name: \n \n ");
+    fflush(stdin);
     gets(cardData->cardHolderName);
     fflush(stdin);
 
@@ -28,47 +29,40 @@ EN_cardError_t getCardHolderName(ST_cardData_t*cardData)
 
 EN_cardError_t getCardExpiryDate(ST_cardData_t*cardData)
 {
-    int month1, year1;
-    printf("please Enter your expiration date in this format MM/YY: ");
+        printf("please Enter Expiration date: \n \n ");
+
+    int  month, year;
+	scanf("%s", cardData->cardExpirationDate);
     fflush(stdin);
 
-    scanf(" %s", cardData->cardExpirationDate);
-    fflush(stdin);
+	if ((strlen(cardData->cardExpirationDate) !=5) || (cardData->cardExpirationDate == NULL))
+	{
+		return WRONG_EXP_DATE;
+	}
+	if (sscanf(cardData->cardExpirationDate, "%2d/%2d", &month, &year) != 2) {
+		return WRONG_EXP_DATE;
+	}
+	if ( month < 1 || month > 12 ) {
+		return WRONG_EXP_DATE;
+	}
 
-    sscanf(cardData->cardExpirationDate, "%2d/%2d", &month1, &year1);
-
-    if(strlen(cardData->cardExpirationDate)>5 || strlen(cardData->cardExpirationDate)<5)
-    {
-        return WRONG_EXP_DATE;
-    }
-    else
-    {
-        if(month1 < 1 || month1 > 12 || year1 < 0)                                                      //the first charecter in the month form MM/YY 05/25
-        {
-            return WRONG_EXP_DATE;
-        }
-
-        return CARD_OK;
-    }
-
+	return CARD_OK;
 }
+
 
 /************************************************************************************************************************************************************/
 
 EN_cardError_t getCardPAN(ST_cardData_t*cardData)
 {
-    printf("please Enter your PAN: ");
-    gets(cardData->primaryAccountNumber);
+    printf("please Enter your PAN: \n \n ");
+   scanf("%s", cardData->primaryAccountNumber);
     fflush(stdin);
 
     if(strlen(cardData->primaryAccountNumber)>19 || strlen(cardData->primaryAccountNumber)<16)
     {
         return WRONG_PAN;
     }
-    else
-    {
         return CARD_OK;
-    }
 
 
 }
@@ -147,4 +141,3 @@ void CardModuleTest(void)
     getCardHolderNameTst();
     printf("all tests have passed successfully ");
 }
-
