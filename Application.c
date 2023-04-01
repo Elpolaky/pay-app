@@ -103,15 +103,14 @@ void main()
 
         strcpy(transaction_data.terminalData.transactionDate, terminal_data.transactionDate);
         strcpy(transaction_data.cardHolderData.cardHolderName, card_data.cardHolderName);
+         //strcpy(card_data.primaryAccountNumber,"222222222222222222"); for testing
 
         for (int i=0; i<18; i++)
         {
             transaction_data.cardHolderData.primaryAccountNumber[i]=card_data.primaryAccountNumber[i];
         }
-        // strcpy(transaction_data.cardHolderData.primaryAccountNumber, card_data.primaryAccountNumber);
 
-        //  printf("%d \n",card_data.primaryAccountNumber);
-        //     printf("%s \n",transaction_data.cardHolderData.primaryAccountNumber);
+
 
         transaction_data.terminalData.maxTransAmount = terminal_data.maxTransAmount;
         transaction_data.terminalData.transAmount = terminal_data.transAmount;
@@ -119,7 +118,6 @@ void main()
 
         //check account status
 //
-         strcpy(card_data.primaryAccountNumber,"222222222222222222");
 
         _isValidAccount= isValidAccount(&card_data,p_account);
         // printf("22222222222222");
